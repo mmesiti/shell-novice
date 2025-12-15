@@ -89,33 +89,13 @@ in a single operation:
 $ mkdir -p ../project/data ../project/results
 ```
 
-The `-R` option to the `ls` command will list all nested subdirectories within a directory.
-Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
-`project` directory:
+:::::::::::::::::::::::::::::::::::::::::  instructor
 
-The `-R` option to the `ls` command will list all nested subdirectories within a directory.
-`R` in `-R` stands for "Recursive" which refers to the idea that the output of a process
-becomes the input of another iteration of that same process.
-So in this case, `ls -R` lists the contents of a directory, and for every directory
-it finds, it lists the contents of that directory,
-and for every directory inside those subdirectories,
-it lists the contents, and so on.
+Discussion of `ls -R` has been removed in favor of
+introducing it in `cp` context, and explaining more deeply
+in `grep`/`find` context.
 
-Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
-`project` directory:
-
-```bash
-$ ls -FR ../project
-```
-
-```output
-../project/:
-data/  results/
-
-../project/data:
-
-../project/results:
-```
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -488,8 +468,7 @@ $ ls quotes.txt thesis/quotations.txt
 quotes.txt   thesis/quotations.txt
 ```
 
-Just like the recursive (`-R`) option for `ls`,
-the `-r` or `--recursive` option for `cp`
+The `-r` or `--recursive` option for `cp`
 applies the command not just to the specifed directory,
 but to all its contents.
 

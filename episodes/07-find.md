@@ -191,12 +191,12 @@ $ grep -n -w -v "the" haiku.txt
 11:Software is like that.
 ```
 
-If we use the `-r` (recursive) option,
-`grep` can search for a pattern through all the files in
-in a directory and its subdirectories subdirectories.
+Similar to how the `-r` option applies `cp` to an entire directory's contents,
+we can add `-r` (recursive) to our `grep` command
+to search for a pattern through all the files in
+in a directory and its subdirectories.
 
-Let's search "recursively" for `Yesterday`
-in the `shell-lesson-data/exercise-data/writing` directory:
+Let's search for `Yesterday` in the `shell-lesson-data/exercise-data/writing` directory:
 
 ```bash
 $ grep -r Yesterday .

@@ -161,10 +161,10 @@ so that the shell will not try to expand the `*` wildcard.
 executes it, prints the result, and waits for another command.
 
 [recursive]{#recursive}
-:   A recursive precudure is one where one step of the procedure is to apply the procedure itself
-(usually to a different input).
-In the context of shell, it often refers to applying a command to a directory and to all directories
-contained within that directory.
+:   A recursive precedure is one that calls itself. This technique is often used to deal
+with subdirectories of unknown depth. Thus a `--recursive` option with a directory
+argument often applies the command not just to the directory itself, but to all
+contents of the directory no matter how many levels of subdirectories are present.
 
 [redirect]{#redirect}
 :   To send a command's output to a file rather than to the screen or another command,
