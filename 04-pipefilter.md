@@ -604,7 +604,7 @@ The `uniq` command has a `-c` option which gives a count of the
 number of times a line occurs in its input.  Assuming your current
 directory is `shell-lesson-data/exercise-data/animal-counts`,
 what command would you use to produce a table that shows
-the total count of each type of animal in the file?
+how many times each type of animal appears in the file?
 
 1. `sort animals.csv | uniq -c`
 2. `sort -t, -k2,2 animals.csv | uniq -c`
@@ -756,5 +756,3 @@ and *only* the processed data files?
 - The best way to use the shell is to use pipes to combine simple single-purpose programs (filters).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
