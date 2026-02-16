@@ -515,7 +515,7 @@ cp: -r not specified; omitting directory 'thesis'
 ### Destination Can Be New Name or Directory
 
 When we use two arguments with `mv` or `cp`,
-the second argument can be the locationa and new name
+the second argument can be the location and new name
 we want our file to have. Alternatively,
 if we provide the path to an existing directory as the second argument,
 `mv`/`cp` will interpret that to mean that we want the file copied/moved
