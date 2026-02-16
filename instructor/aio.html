@@ -378,7 +378,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introducing the Shell</a></p>
 <hr>
-<p>Last updated on 2023-06-09 |
+<p>Last updated on 2026-02-16 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -414,7 +414,7 @@ of graphical interfaces.</li>
 </div>
 </div>
 <div class="section level3">
-<h3 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
+<h3 id="what-is-the-shell">What is the Shell?<a class="anchor" aria-label="anchor" href="#what-is-the-shell"></a>
 </h3>
 <p>Humans and computers commonly interact in many different ways, such
 as through a keyboard and mouse, touch screen interfaces, or using
@@ -423,50 +423,41 @@ personal computers is called a <strong>graphical user interface</strong>
 (GUI). With a GUI, we give instructions by clicking a mouse and using
 menu-driven interactions.</p>
 <p>While the visual aid of a GUI makes it intuitive to learn, this way
-of delivering instructions to a computer scales very poorly. Imagine the
-following task: for a literature search, you have to copy the third line
-of one thousand text files in one thousand different directories and
-paste it into a single file. Using a GUI, you would not only be clicking
-at your desk for several hours, but you could potentially also commit an
-error in the process of completing this repetitive task. This is where
-we take advantage of the Unix shell. The Unix shell is both a
-<strong>command-line interface</strong> (CLI) and a scripting language,
-allowing such repetitive tasks to be done automatically and fast. With
-the proper commands, the shell can repeat tasks with or without some
-modification as many times as we want. Using the shell, the task in the
-literature example can be accomplished in seconds.</p>
+of interacting scales very poorly for some tasks.</p>
+<p>A <strong>command-line interface</strong> (CLI) allows users to to
+interact with a computer by reading and writing text. It excels at
+making repetitive tasks automatic and fast.</p>
+<p>A <strong>shell</strong> is a particular program that lets you type
+commands. In this workshop, we will be using “Bash” which is the most
+popular Unix shell. Bash is often the default shell on Unix and in
+Unix-like tools for Windows.</p>
 </div>
 <div class="section level3">
-<h3 id="the-shell">The Shell<a class="anchor" aria-label="anchor" href="#the-shell"></a>
+<h3 id="why-use-the-shell">Why use the shell?<a class="anchor" aria-label="anchor" href="#why-use-the-shell"></a>
 </h3>
-<p>The shell is a program where users can type commands. With the shell,
-it’s possible to invoke complicated programs like climate modeling
-software or simple commands that create an empty directory with only one
-line of code. The most popular Unix shell is Bash (the Bourne Again
-SHell — so-called because it’s derived from a shell written by Stephen
-Bourne). Bash is the default shell on most modern implementations of
-Unix and in most packages that provide Unix-like tools for Windows. Note
-that ‘Git Bash’ is a piece of software that enables Windows users to use
-a Bash like interface when interacting with Git.</p>
+<p>Imagine the following task: for a literature search, you have to copy
+the third line of one thousand text files in one thousand different
+directories and paste it into a single file.</p>
+<p>Using a GUI, you would not only be clicking at your desk for several
+hours, but you could potentially also commit an error in the process of
+completing this repetitive task.</p>
+<p>Using a CLI, you can write a series of commands that does this
+consistently and nearly instantly.</p>
+<p>The shell can be used for simple tasks like creating an empty folder
+and for launching (even complex) programs with a single command. In
+fact, some tools and resources such as cloud computing systems usually
+require users to be familiar with the shell. Shell commands can be
+combined together and saved into reproducible <em>scripts</em> that
+automate repetitive tasks.</p>
 <p>Using the shell will take some effort and some time to learn. While a
 GUI presents you with choices to select, CLI choices are not
-automatically presented to you, so you must learn a few commands like
-new vocabulary in a language you’re studying. However, unlike a spoken
-language, a small number of “words” (i.e. commands) gets you a long way,
-and we’ll cover those essential few today.</p>
-<p>The grammar of a shell allows you to combine existing tools into
-powerful pipelines and handle large volumes of data automatically.
-Sequences of commands can be written into a <em>script</em>, improving
-the reproducibility of workflows.</p>
-<p>In addition, the command line is often the easiest way to interact
-with remote machines and supercomputers. Familiarity with the shell is
-near essential to run a variety of specialized tools and resources
-including high-performance computing systems. As clusters and cloud
-computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill. We
-can build on the command-line skills covered here to tackle a wide range
-of scientific questions and computational challenges.</p>
-<p>Let’s get started.</p>
+automatically presented to you. It can be daunting at first, but once
+you’ve come familliar with this different style of interacting, you will
+be able to efficiently accomplish a huge variety of tasks.</p>
+</div>
+<div class="section level3">
+<h3 id="lets-get-started-">Let’s get started.<a class="anchor" aria-label="anchor" href="#lets-get-started-"></a>
+</h3>
 <p>When the shell is first opened, you are presented with a
 <strong>prompt</strong>, indicating that the shell is waiting for
 input.</p>
@@ -3283,7 +3274,7 @@ instead:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The <code>-n</code> option specifies a numerical rather than an
 alphanumerical sort.</p>
@@ -3399,7 +3390,7 @@ the output files.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>In the first example with <code>&gt;</code>, the string ‘hello’ is
 written to <code>testfile01.txt</code>, but the file gets overwritten
@@ -3452,7 +3443,7 @@ After these commands, select the answer that corresponds to the file
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Option 3 is correct. For option 1 to be correct we would only run the
 <code>head</code> command. For option 2 to be correct we would only run
@@ -3558,7 +3549,7 @@ least number of lines. Which command listed below would work?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 4 is the solution. The pipe character <code>|</code> is used
 to connect the output from one command to the input of another.
@@ -3624,7 +3615,7 @@ understanding</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>The <code>head</code> command extracts the first 5 lines from
 <code>animals.csv</code>. Then, the last 3 lines are extracted from the
@@ -3689,7 +3680,7 @@ duplicates in their names)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3740,7 +3731,7 @@ animal appears in the file?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Option 4 is the correct answer. If you have difficulty understanding
 why, try running the commands, or sub-sections of the pipelines (make
@@ -3858,7 +3849,7 @@ Which of the following would remove all the processed data files, and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>This would remove <code>.txt</code> files with one-character
@@ -5235,7 +5226,7 @@ each of those files separately.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5303,7 +5294,7 @@ this?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>If a command causes something to crash or hang, it might be useful to
 know what that command was, in order to investigate the problem. Were
@@ -5428,7 +5419,7 @@ directory</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The correct answer is 2.</p>
 <p>The special variables <code>$1</code>, <code>$2</code> and
@@ -5483,7 +5474,7 @@ lines.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5553,7 +5544,7 @@ three scripts would do when run as <code>bash script1.sh *.pdb</code>,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Solutions </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>In each case, the shell expands the wildcard in <code>*.pdb</code>
 before passing the resulting list of file names as arguments to the
@@ -5622,7 +5613,7 @@ error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>The <code>-x</code> option causes <code>bash</code> to run in debug
 mode. This prints out each command as it is run, which will help you to
@@ -5953,7 +5944,7 @@ Miscellaneous:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The correct answer is 3, because the <code>-w</code> option looks
 only for whole-word matches. The other options will also match ‘of’ when
@@ -6053,7 +6044,7 @@ one field in a line.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -6101,7 +6092,7 @@ speed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solutions </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6371,7 +6362,7 @@ you have thought about your answer, you can test the commands in the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Option 1 is correct. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -6448,7 +6439,7 @@ Comprehension</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Find all files with a <code>.dat</code> extension recursively from
