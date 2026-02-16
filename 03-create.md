@@ -89,22 +89,24 @@ in a single operation:
 $ mkdir -p ../project/data ../project/results
 ```
 
-The `-R` option to the `ls` command will list all nested subdirectories within a directory.
-Let's use `ls -FR` to recursively list the new directory hierarchy we just created in the
+Let's use `ls -F` to list the new directories we just created in the
 `project` directory:
 
 ```bash
-$ ls -FR ../project
+$ ls -F ../project
 ```
 
 ```output
-../project/:
 data/  results/
-
-../project/data:
-
-../project/results:
 ```
+
+:::::::::::::::::::::::::::::::::::::::::  instructor
+
+One could use `ls -R` to list a directory hierarchy, but rather
+than introducing it in `cp` context, `find` can be used instead
+and is explained more deeply in the `find` episode.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -477,9 +479,11 @@ $ ls quotes.txt thesis/quotations.txt
 quotes.txt   thesis/quotations.txt
 ```
 
-We can also copy a directory and all its contents by using the
-[recursive](https://en.wikipedia.org/wiki/Recursion) option `-r`,
-e.g. to back up a directory:
+The `-r` or `--recursive` option for `cp`
+applies the command not just to the specifed directory,
+but to all its contents.
+
+As an example, we can use this to back up a directory:
 
 ```bash
 $ cp -r thesis thesis_backup
