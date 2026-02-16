@@ -28,7 +28,7 @@ With a GUI, we give instructions by clicking a mouse and using menu-driven inter
 While the visual aid of a GUI makes it intuitive to learn,
 this way of interacting scales very poorly for some tasks.
 
-A **command-line interface** (CLI) allows users to to interact with computer by reading
+A **command-line interface** (CLI) allows users to to interact with a computer by reading
 and writing text. It excels at making repetitive tasks automatic and fast.
 
 A **shell** is a particular program that lets you type commands.
@@ -51,13 +51,12 @@ and for launching (even complex) programs with a single command.
 In fact, some tools and resources such as cloud computing systems
 usually require users to be familiar with the shell.
 Shell commands can be combined together and saved into reproducible *scripts*
-that handle large volumes of data automatically.
+that automate repetitive tasks.
 
 Using the shell will take some effort and some time to learn.
 While a GUI presents you with choices to select, CLI choices are not automatically presented to you.
 It can be daunting at first, but once you've come familliar with this different style
-of iteracting, you will be able to find and use the information you need to accomplish
-a huge variety of tasks.
+of interacting, you will be able to efficiently accomplish a huge variety of tasks.
 
 ### Let's get started.
 
