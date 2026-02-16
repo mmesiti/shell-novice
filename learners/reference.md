@@ -160,6 +160,12 @@ so that the shell will not try to expand the `*` wildcard.
 :   (REPL): A [command-line interface](#command-line-interface) that reads a command from the user,
 executes it, prints the result, and waits for another command.
 
+[recursive]{#recursive}
+:   A recursive precedure is one that calls itself. This technique is often used to deal
+with subdirectories of unknown depth. Thus a `--recursive` option with a directory
+argument often applies the command not just to the directory itself, but to all
+contents of the directory no matter how many levels of subdirectories are present.
+
 [redirect]{#redirect}
 :   To send a command's output to a file rather than to the screen or another command,
 or equivalently to read a command's input from a file.
