@@ -480,7 +480,7 @@ quotes.txt   thesis/quotations.txt
 ```
 
 The `-r` or `--recursive` option for `cp`
-applies the command not just to the specifed directory,
+applies the command not just to the specified directory,
 but to all its contents.
 
 As an example, we can use this to back up a directory:

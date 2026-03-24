@@ -55,7 +55,7 @@ that automate repetitive tasks.
 
 Using the shell will take some effort and some time to learn.
 While a GUI presents you with choices to select, CLI choices are not automatically presented to you.
-It can be daunting at first, but once you've come familliar with this different style
+It can be daunting at first, but once you've come familiar with this different style
 of interacting, you will be able to efficiently accomplish a huge variety of tasks.
 
 ### Let's get started.
