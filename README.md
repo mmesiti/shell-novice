@@ -5,7 +5,8 @@
 # shell-novice
 
 An introduction to the Unix shell for people who have never used the command line before.
-Please see [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
+Original material: [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
+Please see [https://mmesiti.github.io/shell-novice/](https://mmesiti.github.io/shell-novice/)
 for a rendered version of this material, [the lesson template documentation][lesson-example]
 for instructions on formatting, building, and submitting material.
 
@@ -21,6 +22,13 @@ for instructions on formatting, building, and submitting material.
 
 - Gerard Capes
 - Jacob Deppen
+
+
+This version is amended by Michele Mesiti,
+with the aims:
+- to adapt it to the expected audience of the course
+- to reduce verbosity so that the lesson material can be used more as a guide.
+
   
 ## Contributing
 
