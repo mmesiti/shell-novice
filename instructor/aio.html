@@ -378,7 +378,7 @@
         
 <section id="aio-01-intro"><p>Content from <a href="01-intro.html">Introducing the Shell</a></p>
 <hr>
-<p>Last updated on 2026-03-24 |
+<p>Last updated on 2026-03-30 |
 
         <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/01-intro.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 5 minutes</p>
@@ -416,6 +416,26 @@ of graphical interfaces.</li>
 <div class="section level3">
 <h3 id="what-is-the-shell">What is the Shell?<a class="anchor" aria-label="anchor" href="#what-is-the-shell"></a>
 </h3>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Some vocabulary:</p>
+<ul>
+<li>
+<strong>GUI</strong>: <strong>G</strong>raphical
+<strong>U</strong>ser <strong>I</strong>nterface, the most common way to
+use computers nowadays</li>
+<li>
+<strong>CLI</strong>: <strong>C</strong>ommand <strong>L</strong>ine
+<strong>Interface</strong>, old fashioned</li>
+</ul>
+</div>
+</div>
+</div>
 <p>Humans and computers commonly interact in many different ways, such
 as through a keyboard and mouse, touch screen interfaces, or using
 speech recognition systems. The most widely used way to interact with
@@ -435,6 +455,25 @@ Unix-like tools for Windows.</p>
 <div class="section level3">
 <h3 id="why-use-the-shell">Why use the shell?<a class="anchor" aria-label="anchor" href="#why-use-the-shell"></a>
 </h3>
+<div id="keypoints2" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>CLIs are harder to learn than GUIs, but:</p>
+<ul>
+<li>best supported way to interact with HPC (and this might be why most
+of you are here today).</li>
+<li>smooth transition between experimentation and automation: write
+commands interactively and then compose them into a script (great for
+<strong>reproducibility</strong>) (see <a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop" class="external-link">REPL</a>)</li>
+<li>can be more productive once learned</li>
+</ul>
+</div>
+</div>
+</div>
 <p>Imagine the following task: for a literature search, you have to copy
 the third line of one thousand text files in one thousand different
 directories and paste it into a single file.</p>
@@ -466,6 +505,24 @@ input.</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span></span></code></pre>
 </div>
+<div id="keypoints3" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>the <strong>command prompt</strong> may look in many ways, showing
+various information. We’ll (try to) show it always as <code>$</code>,
+which is the “worst” case (least amount of information).</li>
+<li>You can type commands after the command prompt.</li>
+<li>when copying and pasting, be careful not copy the command
+prompt.</li>
+</ul>
+</div>
+</div>
+</div>
 <p>The shell typically uses <code>$</code> as the prompt, but may use a
 different symbol. In the examples for this lesson, we’ll show the prompt
 as <code>$</code>. Most importantly, <em>do not type the prompt</em>
@@ -491,6 +548,10 @@ prompt is not just a short <code>$</code>. This lesson does not depend
 on this additional information and it should also not get in your way.
 The only important item to focus on is the <code>$</code> character
 itself and we will see later why.</p>
+</div>
+<div class="section level3">
+<h3 id="our-first-command">Our first command<a class="anchor" aria-label="anchor" href="#our-first-command"></a>
+</h3>
 <p>So let’s try our first command, <code>ls</code>, which is short for
 listing. This command will list the contents of the current
 directory:</p>
@@ -531,20 +592,20 @@ corresponding to that command is not installed.</p>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="nelles-pipeline-a-typical-problem">Nelle’s Pipeline: A Typical Problem<a class="anchor" aria-label="anchor" href="#nelles-pipeline-a-typical-problem"></a>
+<section><h2 class="section-heading" id="nelles-pipeline-a-typical-problem-fictional">Nelle’s Pipeline: A Typical Problem (fictional)<a class="anchor" aria-label="anchor" href="#nelles-pipeline-a-typical-problem-fictional"></a>
 </h2>
 <hr class="half-width">
 <p>Nelle Nemo, a marine biologist, has just returned from a six-month
 survey of the <a href="https://en.wikipedia.org/wiki/North_Pacific_Gyre" class="external-link">North Pacific
 Gyre</a>, where she has been sampling gelatinous marine life in the <a href="https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch" class="external-link">Great
-Pacific Garbage Patch</a>. She has 1520 samples that she’s run through
-an assay machine to measure the relative abundance of 300 proteins. She
-needs to run these 1520 files through an imaginary program called
-<code>goostats.sh</code>. In addition to this huge task, she has to
-write up results by the end of the month, so her paper can appear in a
-special issue of <em>Aquatic Goo Letters</em>.</p>
-<p>If Nelle chooses to run <code>goostats.sh</code> by hand using a GUI,
-she’ll have to select and open a file 1520 times. If
+Pacific Garbage Patch</a>. She has <strong>many</strong> samples that
+she’s run through an assay machine to measure the relative abundance of
+300 proteins. She needs to run these <strong>many</strong> files through
+an imaginary program called <code>goostats.sh</code>. In addition to
+this huge task, she has to write up results by the end of the month into
+a paper.</p>
+<p>If Nelle had to run <code>goostats.sh</code> by hand using a GUI,
+she’ll have to select and open a file <strong>many</strong> times. If
 <code>goostats.sh</code> takes 30 seconds to run each file, the whole
 process will take more than 12 hours of Nelle’s attention. With the
 shell, Nelle can instead assign her computer this mundane task while she
@@ -566,7 +627,7 @@ be able to use it again whenever she collects more data.</p>
 <li>iterate over files</li>
 <li>run a shell script containing her pipeline</li>
 </ul>
-<div id="keypoints1" class="callout keypoints">
+<div id="keypoints4" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -4133,7 +4194,7 @@ like a list of numbers or a subset of data.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -4207,7 +4268,7 @@ identical output.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The first code block gives the same output on each iteration through
 the loop. Bash expands the wildcard <code>*.pdb</code> within the loop
@@ -4282,7 +4343,7 @@ The value of the <code>datafile</code> variable is evaluated using
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so any file name starting with the letter c, followed by
@@ -4326,7 +4387,7 @@ be listed.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>4 is the correct answer. <code>*</code> matches zero or more
 characters, so a file name with zero or more characters before a letter
@@ -4377,7 +4438,7 @@ will be saved to a file called <code>alkanes.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The text from each file in turn gets written to the
@@ -4433,7 +4494,7 @@ file called <code>all.pdb</code>.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>3 is the correct answer. <code>&gt;&gt;</code> appends to a file,
 rather than overwriting it with the redirected output from a command.
@@ -4820,7 +4881,7 @@ would we want to run?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>The second version is the one we want to run. This prints to screen
 everything enclosed in the quote marks, expanding the loop variable name
@@ -4869,7 +4930,7 @@ following code:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>We have a nested loop, i.e. contained within another loop, so for
 each species in the outer loop, the inner loop (the nested loop)
@@ -5955,7 +6016,7 @@ Miscellaneous:
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The correct answer is 3, because the <code>-w</code> option looks
 only for whole-word matches. The other options will also match ‘of’ when
@@ -6056,7 +6117,7 @@ line.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3 &gt; $1.txt</code></pre>
 <p>Actually, you can swap the order of the two cut commands and it still
@@ -6104,7 +6165,7 @@ speed.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solutions </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -6374,7 +6435,7 @@ you have thought about your answer, you can test the commands in the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Option 1 is correct. Putting the match expression in quotes prevents
 the shell expanding it, so it gets passed to the <code>find</code>
@@ -6451,7 +6512,7 @@ Comprehension</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Find all files with a <code>.dat</code> extension recursively from
