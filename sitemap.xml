@@ -22,6 +22,9 @@
     <loc>https://swcarpentry.github.io/shell-novice/07-find.html</loc>
   </url>
   <url>
+    <loc>https://swcarpentry.github.io/shell-novice/08-permissions.html</loc>
+  </url>
+  <url>
     <loc>https://swcarpentry.github.io/shell-novice/404.html</loc>
   </url>
   <url>
@@ -62,6 +65,9 @@
   </url>
   <url>
     <loc>https://swcarpentry.github.io/shell-novice/instructor/07-find.html</loc>
+  </url>
+  <url>
+    <loc>https://swcarpentry.github.io/shell-novice/instructor/08-permissions.html</loc>
   </url>
   <url>
     <loc>https://swcarpentry.github.io/shell-novice/instructor/404.html</loc>
