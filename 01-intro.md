@@ -19,6 +19,15 @@ exercises: 0
 
 ### What is the Shell?
 
+:::: keypoints
+
+Some vocabulary:
+
+- **GUI**: **G**raphical **U**ser **I**nterface, the most common way to use computers nowadays
+- **CLI**: **C**ommand **L**ine **Interface**, old fashioned
+
+::::::::::::
+
 Humans and computers commonly interact in many different ways, such as through a keyboard and mouse,
 touch screen interfaces, or using speech recognition systems.
 The most widely used way to interact with personal computers is called a
@@ -35,7 +44,20 @@ A **shell** is a particular program that lets you type commands.
 In this workshop, we will be using "Bash" which is the most popular Unix shell.
 Bash is often the default shell on Unix and in Unix-like tools for Windows.
 
+
 ### Why use the shell?
+
+:::: keypoints
+
+CLIs are harder to learn than GUIs, but:
+
+- best supported way to interact with HPC (and this might be why most of you are here today).
+- smooth transition between experimentation and automation: 
+  write commands interactively and then compose them into a script (great for **reproducibility**) (see [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop))
+- can be more productive once learned
+
+::::::::::::
+
 
 Imagine the following task:
 for a literature search, you have to copy the third line of one thousand text files in one thousand
@@ -58,7 +80,13 @@ While a GUI presents you with choices to select, CLI choices are not automatical
 It can be daunting at first, but once you've come familiar with this different style
 of interacting, you will be able to efficiently accomplish a huge variety of tasks.
 
+
+
+
+
 ### Let's get started.
+
+
 
 When the shell is first opened, you are presented with a **prompt**,
 indicating that the shell is waiting for input.
@@ -66,6 +94,15 @@ indicating that the shell is waiting for input.
 ```bash
 $
 ```
+
+::: keypoints
+
+- the **command prompt** may look in many ways, showing various information.
+  We'll (try to) show it always as `$`, which is the "worst" case (least amount of information).
+- You can type commands after the command prompt.
+- when copying and pasting, be careful not copy the command prompt.
+
+:::::::::::::
 
 The shell typically uses `$ ` as the prompt, but may use a different symbol.
 In the examples for this lesson, we'll show the prompt as `$ `.
@@ -87,10 +124,15 @@ a prompt might look like, e.g.:
 nelle@localhost $
 ```
 
+
+
 The prompt might even include more than this. Do not worry if your prompt is not
 just a short `$ `. This lesson does not depend on this additional information and it
 should also not get in your way. The only important item to focus on is the `$ `
 character itself and we will see later why.
+
+
+### Our first command
 
 So let's try our first command, `ls`, which is short for listing.
 This command will list the contents of the current directory:
@@ -125,21 +167,20 @@ is not installed.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Nelle's Pipeline: A Typical Problem
+## Nelle's Pipeline: A Typical Problem (fictional)
 
 Nelle Nemo, a marine biologist,
 has just returned from a six-month survey of the
 [North Pacific Gyre](https://en.wikipedia.org/wiki/North_Pacific_Gyre),
 where she has been sampling gelatinous marine life in the
 [Great Pacific Garbage Patch](https://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
-She has 1520 samples that she's run through an assay machine to measure the relative abundance
+She has **many** samples that she's run through an assay machine to measure the relative abundance
 of 300 proteins.
-She needs to run these 1520 files through an imaginary program called `goostats.sh`.
-In addition to this huge task, she has to write up results by the end of the month, so her paper
-can appear in a special issue of *Aquatic Goo Letters*.
+She needs to run these **many** files through an imaginary program called `goostats.sh`.
+In addition to this huge task, she has to write up results by the end of the month into a paper.
 
-If Nelle chooses to run `goostats.sh` by hand using a GUI,
-she'll have to select and open a file 1520 times.
+If Nelle had to run `goostats.sh` by hand using a GUI,
+she'll have to select and open a file **many** times.
 If `goostats.sh` takes 30 seconds to run each file, the whole process will take more than 12 hours
 of Nelle's attention.
 With the shell, Nelle can instead assign her computer this mundane task while she focuses
@@ -164,8 +205,6 @@ In order to achieve her task, Nelle needs to know how to:
 - retrieve a set of files
 - iterate over files
 - run a shell script containing her pipeline
-
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
