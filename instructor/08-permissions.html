@@ -109,11 +109,11 @@
   The Unix Shell
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 96%" class="percentage">
-    96%
+<aside class="col-md-12 lesson-progress"><div style="width: 92%" class="percentage">
+    92%
   </div>
   <div class="progress software">
-    <div class="progress-bar software" role="progressbar" style="width: 96%" aria-valuenow="96" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar software" role="progressbar" style="width: 92%" aria-valuenow="92" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -270,6 +270,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09-hpc.html">9. Recommendations on using the shell on shared HPC systems</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -313,7 +322,7 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/07-find.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/09-hpc.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -321,16 +330,16 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Finding Things
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/09-hpc.html" rel="next">
+          Next: Recommendations on...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>File Permissions</h1>
-        <p>Last updated on 2026-03-30 |
+        <p>Last updated on 2026-03-31 |
 
-        <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/08-permissions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/mmesiti/shell-novice/edit/main/episodes/08-permissions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
@@ -363,6 +372,167 @@
 </div>
 </div>
 </div>
+<p>On Linux, files and directories have <em>permissions</em> that decide
+who can do what with them.</p>
+<p>A simple permission mechanism is based on ownership: each
+file/directory has a user owner and a group owner.</p>
+<p>To visualize the permission of the content of the current directory,
+we can use <code>ls</code> with the <code>-l</code> option:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">total</span> 12</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 michele  testgroup    0 Mär 31 23:16 micheles_file_that_I_can_write</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 training testgroup   29 Mär 31 23:22 my_file_that_michele_can_write</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="ex">-rw-r-----</span> 1 training testgroup   26 Mär 31 23:22 my_file_that_michele_can_read</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="ex">-rw--w----</span> 1 training testgroup    0 Mär 31 23:22 my_file_that_michele_cant_even_read</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 training training     0 Mär 31 23:23 another_file_that_michele_cant_even_read</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="ex">drwxrwsr-x</span> 2 training testgroup 4096 Mär 31 23:35 a_subdirectory</span></code></pre>
+</div>
+<p>In this directory, there are files belonging to 2 users:
+<code>training</code> and <code>michele</code>. The files also belong to
+2 groups: <code>testgroup</code> and <code>training</code>.</p>
+<p>The possible permissions are displayed as the arrays of letters
+<code>-rw-r-----</code>, which is divided in 4 parts: - the first
+position indicates the file type (<code>-</code> for regular type,
+<code>d</code> for directory) - the positions 2-4 represent the
+permissions for the <strong>user that owns the file</strong> - the
+positions 5-7 represent the permissions for the users in the
+<strong>group that owns the file</strong> - the positions 8-10 represent
+the permissions for all other users.</p>
+<ul><li>
+<code>r</code> means that the file is readable (lack of
+<code>r</code> and presence of <code>-</code> means no read
+permission)</li>
+<li>
+<code>w</code> means that the file is writable/modifiable (lack of
+<code>w</code> and presence of <code>-</code> means no write
+permission)</li>
+<li>
+<code>x</code> means that the file is executable (lack of
+<code>x</code> and presence of <code>-</code> means no execute
+permission)</li>
+</ul><p>The user <code>training</code> is in the group <code>training</code>
+and in the group <code>testgroup</code> while the user
+<code>michele</code> is only in the group <code>testgroup</code> (and
+other groups that we are not interested in).</p>
+<p>The <code>training</code> user can verify this with</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> groups</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">training</span> testgroup</span></code></pre>
+</div>
+<div id="file-permissions-reading-comprehension" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="file-permissions-reading-comprehension" class="callout-inner">
+<h3 class="callout-title">File Permissions reading comprehension</h3>
+<div class="callout-content">
+<p>Given the following output of the <code>ls -l</code> command:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">total</span> 12</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 michele  michele      0 Mär 31 23:16 algebra</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">-rw-r-----</span> 1 michele  testgroup    0 Mär 31 23:16 tomato </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 michele  testgroup    0 Mär 31 23:16 potato</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 training testgroup   29 Mär 31 23:22 pear </span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="ex">-rwxr-----</span> 1 training testgroup    0 Mär 31 23:22 car.sh</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="ex">-rw-rw----</span> 1 training training     0 Mär 31 23:23 headphones </span></code></pre>
+</div>
+<ol style="list-style-type: decimal"><li>Can <code>training</code> read <code>algebra</code>?</li>
+<li>Can <code>training</code> remove <code>tomato</code>?</li>
+<li>Can <code>training</code> read/wite <code>potato</code>?</li>
+<li>Can <code>michele</code> read/wite <code>pear</code>?</li>
+<li>Can <code>michele</code> execute <code>car.sh</code>?</li>
+<li>Can <code>michele</code> remove <code>headphones</code>?</li>
+</ol></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal"><li>No, the file is owned by user <code>michele</code> and group
+<code>michele</code>, and there is no permission for other users</li>
+<li>
+<code>training</code> can only read <code>tomato</code>, thanks to
+the fact that <code>training</code> is in the <code>testgroup</code>,
+which is the owner group of <code>tomato</code>, and the group has only
+read permissions. So <code>training</code> cannote remove/move
+<code>tomato</code>.</li>
+<li>
+<code>training</code> can read and write <code>potato</code>, thanks
+to the fact that <code>training</code> is in the <code>testgroup</code>,
+which is the owner group of <code>tomato</code>.</li>
+<li>
+<code>michele</code> can read and write <code>pear</code> because
+<code>michele</code> is in <code>testgroup</code>, which owns the
+<code>pear</code> file and has <code>rw</code> permissions on it.</li>
+<li>No, only <code>training</code> can execute <code>car.sh</code>,
+because the group <code>testgroup</code> has no execute permissions on
+it. <strong>BUT:</strong> <code>michele</code> can still run it,
+assuming it is a Bash script, with <code>bash car.sh</code>.</li>
+<li>
+<code>michele</code> cannot do anything on <code>headphones</code>
+because it is owned by <code>training</code> and by the
+<code>training</code> group.</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div id="changing-permissions" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="changing-permissions" class="callout-inner">
+<h3 class="callout-title">Changing permissions</h3>
+<div class="callout-content">
+<p>There are a few commands that can be used to manipulate
+permissions:</p>
+<ul><li><p><strong>chmod</strong> and <strong>chgrp</strong>: The command
+<code>chmod</code> can be used to change the permissions of files and
+directories, and the command <code>chgrp</code> can be used to change
+the group owner of files and directories. The command
+<code>chmod g+s</code> on a directory owned by <code>testgroup</code>
+makes so that by default files and directories in it are created as
+belonging to the <code>testgroup</code>.</p></li>
+<li><p><strong>umask</strong>: To make sure that all created files are
+also writable by users of the group, the command <code>umask 0002</code>
+should be used in the shell <em>before the creation</em>. The default
+value of <code>umask</code> is typically <code>0022</code>, which makes
+files writable/modifiable only by the user, and not the group.</p></li>
+</ul><p>This can become complicated quickly. ACLs might provide a more
+powerful mechanism to share files and directories.</p>
+</div>
+</div>
+</div>
+<div id="more-flexibility-with-acls-access-control-lists" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="more-flexibility-with-acls-access-control-lists" class="callout-inner">
+<h3 class="callout-title">More flexibility with ACLs (Access Control
+Lists)</h3>
+<div class="callout-content">
+<p>A more powerful access control mechanism is provided by the ACL
+mechanism, that can be used, among other things, to grant access to
+files and directories to users that are not part of any group we are
+part of.</p>
+<p>To manipulate ACLs, the <code>getfacl</code> and <code>setfacl</code>
+commands are used.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -371,9 +541,16 @@
 <div class="callout-inner">
 <div class="callout-content">
 <ul><li>
-<code>ls -l</code> gives information about file permissions</li>
+<code>ls -l</code> gives information about simple file
+permissions.</li>
 <li>files and directories have a <em>user</em> owner and a
 <em>group</em> owner</li>
+<li>
+<code>chown</code> and <code>chgrp</code> can be used to change the
+permissions of a file</li>
+<li>ACLs give a more powerful mechanism to define ownership</li>
+<li>ACLs can be manipulated with the <code>getfacl</code> and
+<code>setfacl</code> commands.</li>
 </ul></div>
 </div>
 </div>
@@ -383,7 +560,7 @@
       </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/07-find.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/09-hpc.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
@@ -391,8 +568,8 @@
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
           Previous: Finding Things
         </a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
-          Home
+        <a class="chapter-link float-end" href="../instructor/09-hpc.html" rel="next">
+          Next: Recommendations on...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -404,14 +581,14 @@
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/swcarpentry/shell-novice/edit/main/episodes/08-permissions.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/mmesiti/shell-novice/edit/main/episodes/08-permissions.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/swcarpentry/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/swcarpentry/shell-novice/" class="external-link">Source</a></p>
+        | <a href="https://github.com/mmesiti/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/mmesiti/shell-novice/" class="external-link">Source</a></p>
         <p>
-        <a href="https://github.com/swcarpentry/shell-novice/blob/main/" class="external-link">Cite</a>
-        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        <a href="https://github.com/mmesiti/shell-novice/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:michele.mesiti@kit.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -430,17 +607,17 @@
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://swcarpentry.github.io/shell-novice/instructor/08-permissions.html",
+  "@id": "https://mmesiti.github.io/shell-novice/instructor/08-permissions.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "File Permissions",
   "creativeWorkStatus": "active",
-  "url": "https://swcarpentry.github.io/shell-novice/instructor/08-permissions.html",
-  "identifier": "https://swcarpentry.github.io/shell-novice/instructor/08-permissions.html",
+  "url": "https://mmesiti.github.io/shell-novice/instructor/08-permissions.html",
+  "identifier": "https://mmesiti.github.io/shell-novice/instructor/08-permissions.html",
   "dateCreated": "2014-10-22",
-  "dateModified": "2026-03-30",
+  "dateModified": "2026-03-31",
   "datePublished": "2026-03-31"
 }
 

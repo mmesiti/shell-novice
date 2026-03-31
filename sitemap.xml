@@ -1,123 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/01-intro.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/01-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/02-filedir.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/02-filedir.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/03-create.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/03-create.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/04-pipefilter.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/04-pipefilter.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/05-loop.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/05-loop.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/06-script.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/06-script.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/07-find.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/07-find.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/08-permissions.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/08-permissions.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/404.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/09-hpc.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/CODE_OF_CONDUCT.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/404.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/LICENSE.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/aio.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/discuss.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/aio.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/images.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/discuss.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/index.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/images.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/01-intro.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/index.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/02-filedir.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/01-intro.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/03-create.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/02-filedir.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/04-pipefilter.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/03-create.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/05-loop.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/04-pipefilter.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/06-script.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/05-loop.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/07-find.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/06-script.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/08-permissions.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/07-find.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/404.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/08-permissions.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/09-hpc.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/LICENSE.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/aio.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/discuss.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/images.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/aio.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/index.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/discuss.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/instructor-notes.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/images.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/key-points.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/index.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/profiles.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/reference.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/key-points.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor/resources.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/profiles.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/instructor-notes.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/reference.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/key-points.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor/resources.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/profiles.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/instructor-notes.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/reference.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/key-points.html</loc>
   </url>
   <url>
-    <loc>https://swcarpentry.github.io/shell-novice/resources.html</loc>
+    <loc>https://mmesiti.github.io/shell-novice/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://mmesiti.github.io/shell-novice/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://mmesiti.github.io/shell-novice/resources.html</loc>
   </url>
 </urlset>

@@ -330,6 +330,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush10">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading10">
+        <a href="09-hpc.html">9. Recommendations on using the shell on shared HPC systems</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -570,9 +582,27 @@ command.</li>
 <hr class="half-width">
 <ul>
 <li>
-<code>ls -l</code> gives information about file permissions</li>
+<code>ls -l</code> gives information about simple file
+permissions.</li>
 <li>files and directories have a <em>user</em> owner and a
 <em>group</em> owner</li>
+<li>
+<code>chown</code> and <code>chgrp</code> can be used to change the
+permissions of a file</li>
+<li>ACLs give a more powerful mechanism to define ownership</li>
+<li>ACLs can be manipulated with the <code>getfacl</code> and
+<code>setfacl</code> commands.</li>
+</ul></section><section id="09-hpc"><h2 class="section-heading"><a href="09-hpc.html">Recommendations on using the shell on shared HPC systems</a></h2>
+<hr class="half-width">
+<ul>
+<li>When working on the <em>login node</em> of a HPC system, make sure
+your commands are not using too many computational resources and do not
+run for more than a couple of minutes.</li>
+<li>If you need more power, create an interactive (or batch) allocation
+with the resource manager of the HPC cluster (e.g., SLURM)</li>
+<li>Performing too many file operations might as well cause slowdowns
+for other users attempting to use the filesystem.</li>
+<li>Performing too many file operations might be inefficient</li>
 </ul></section>
 </div>
     </main>
@@ -586,14 +616,14 @@ command.</li>
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/swcarpentry/shell-novice/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/mmesiti/shell-novice/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/swcarpentry/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/swcarpentry/shell-novice/" class="external-link">Source</a></p>
+        | <a href="https://github.com/mmesiti/shell-novice/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/mmesiti/shell-novice/" class="external-link">Source</a></p>
         <p>
-        <a href="https://github.com/swcarpentry/shell-novice/blob/main/" class="external-link">Cite</a>
-        | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        <a href="https://github.com/mmesiti/shell-novice/blob/main/" class="external-link">Cite</a>
+        | <a href="mailto:michele.mesiti@kit.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -613,15 +643,15 @@ command.</li>
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://swcarpentry.github.io/shell-novice/key-points.html",
+  "@id": "https://mmesiti.github.io/shell-novice/key-points.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Key Points",
   "creativeWorkStatus": "active",
-  "url": "https://swcarpentry.github.io/shell-novice/key-points.html",
-  "identifier": "https://swcarpentry.github.io/shell-novice/key-points.html",
+  "url": "https://mmesiti.github.io/shell-novice/key-points.html",
+  "identifier": "https://mmesiti.github.io/shell-novice/key-points.html",
   "dateCreated": "2014-10-22",
   "dateModified": "2026-03-31",
   "datePublished": "2026-03-31"
