@@ -1,6 +1,6 @@
 ---
 title: Pipes and Filters
-teaching: 25
+teaching: 15 
 exercises: 10
 ---
 
