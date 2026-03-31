@@ -1,7 +1,7 @@
 ---
 title: Navigating Files and Directories
-teaching: 30
-exercises: 10
+teaching: 15
+exercises: 5
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives

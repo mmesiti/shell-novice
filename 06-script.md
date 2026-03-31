@@ -1,7 +1,7 @@
 ---
 title: Shell Scripts
-teaching: 30
-exercises: 15
+teaching: 15 
+exercises: 15 
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives

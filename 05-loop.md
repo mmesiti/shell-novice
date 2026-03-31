@@ -1,6 +1,6 @@
 ---
 title: Loops
-teaching: 40
+teaching: 20
 exercises: 10
 ---
 

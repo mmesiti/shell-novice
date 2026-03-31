@@ -27,13 +27,13 @@ life_cycle: 'stable'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/swcarpentry/shell-novice'
+source: 'https://github.com/mmesiti/shell-novice'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'michele.mesiti@kit.edu'
 
 # Navigation ------------------------------------------------
 #
@@ -67,6 +67,7 @@ episodes:
 - 06-script.md
 - 07-find.md
 - 08-permissions.md
+- 09-hpc.md
 
 # Information for Learners
 learners: 
@@ -83,6 +84,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: 'https://swcarpentry.github.io/shell-novice'
+url: 'https://mmesiti.github.io/shell-novice'
 analytics: carpentries
 lang: en

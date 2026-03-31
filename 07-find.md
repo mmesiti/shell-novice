@@ -1,7 +1,7 @@
 ---
 title: Finding Things
-teaching: 25
-exercises: 20
+teaching: 20 
+exercises: 10
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
