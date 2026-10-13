@@ -80,13 +80,14 @@ total 12
 -rw-rw---- 1 training training     0 Mär 31 23:23 headphones 
 ```
 
+And knowing that both `michele` and `training` are members of `testgroup`:
+
 1. Can `training` read `algebra`?
 2. Can `training` remove `tomato`?
 3. Can `training` read/wite `potato`?
 4. Can `michele` read/wite `pear`?
 5. Can `michele` execute `car.sh`?
 6. Can `michele` remove `headphones`?
-
 
 ::::::: solution
 
