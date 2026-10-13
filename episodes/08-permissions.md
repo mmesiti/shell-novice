@@ -6,13 +6,17 @@ exercises: 5
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
+- Understand the output of `ls -l` 
 - Share files and directories with other users
+- Why is `chmod a+rwx` bad?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How can I tell if I can read and modify a file?
+- How can I allow someone else to read and write in a directory I own? 
+  What are the limitations?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -40,11 +44,14 @@ The files also belong to 2 groups: `testgroup` and `training`.
 
 The possible permissions are displayed as the arrays of letters `-rw-r----- `,
 which is divided in 4 parts:
-- the first position indicates the file type (`-` for regular type, `d` for directory)
-- the positions 2-4 represent the permissions for the **user that owns the file**
-- the positions 5-7 represent the permissions for the users in the **group that owns the file**
-- the positions 8-10 represent the permissions for all other users.
 
+- the first position indicates the file type (`-` for regular type, `d` for directory)
+- the positions 2-4 represent the permissions for the **user that owns the file** 
+- the positions 5-7 represent the permissions for the users in the **group that owns the file** 
+- the positions 8-10 represent the permissions for all other users
+
+
+The letters in the arrays have the following meanings:
 
 - `r` means that the file is readable 
       (lack of `r` and presence of `-` means no read permission)
@@ -105,13 +112,20 @@ And knowing that both `michele` and `training` are members of `testgroup`:
 ::::::::::::::::::::::::::: callout
 ## Changing permissions
 
-There are a few commands that can be used to manipulate permissions:
+There are a few commands that can be used to manipulate permissions 
+and owners of files and directories:
 
-- **chmod** and **chgrp**: The command `chmod` can be used to change the permissions of files and directories,
-and the command `chgrp` can be used to change the group owner of files and directories.
+- `chmod` to change the permissions 
+   (`r`,`w`,`x` for user owner, group owner and other users)
+- `chown` to change the user owner and group owner
+- `chgrp` to change the group owner: 
+   useful to share files and directories
+   with users that you share a group with.
+
 The command `chmod g+s` on a directory owned by `testgroup` 
 makes so that by default
-files and directories in it are created as belonging to the `testgroup`.
+files and directories in it are created as belonging to the `testgroup`
+(see the `s` in the second group of permission letters).
 
 - **umask**: To make sure that all created files are also writable by users of the group, 
 the command `umask 0002` should be used in the shell *before the creation*. 
@@ -119,7 +133,7 @@ The default value of `umask` is typically `0022`,
 which makes files writable/modifiable only by the user, and not the group.
 
 This can become complicated quickly. 
-ACLs might provide a more powerful mechanism to share files and directories.
+ACLs (see below) provide a more powerful mechanism to share files and directories.
 
 :::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::: callout
@@ -134,6 +148,28 @@ To manipulate ACLs, the `getfacl` and `setfacl` commands are used.
 
 :::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::: callout
+
+## Write permissions == remove permissions
+
+If you give anyone write permissions to a file,
+they can also delete it.
+
+Notice that the infamous command `rm -rf /`,
+if executed on a shared system (like a HPC cluster)
+would remove *everything* that one has  access to,
+including all files **intentionally** shared with them
+but also all files unintentionally shared with them.
+
+This command is actually disabled in modern systems.
+
+In any case, it has already happened that AI agents
+have removed all files they had access to,
+and nowadays many people run AI agents on HPC systems.
+
+So be careful about giving write access to all/other users.
+
+:::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
