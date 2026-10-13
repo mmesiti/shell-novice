@@ -5,19 +5,19 @@
 # check for the right number of input arguments
 if [ $# -ne 2 ]
 then
-    echo "call goostats with two arguments:"
-    echo "  $0 input_file result_file"
+    echo "call goostats with two arguments:" >&2
+    echo "  $0 input_file result_file" >&2
     exit 1
 fi
 
 # check if files already exist (good for $1, bad for $2)
 if [ ! -e "$1" ]
 then
-    echo "error reading input: $1"
+    echo "error reading input: file $1 does not exist" >&2
     exit 2
 elif [ -e "$2" ]
 then
-    echo "error writing result: $2"
+    echo "error writing result: file $2 already exists" >&2
     exit 2
 fi
 
